@@ -17,10 +17,12 @@ Route::get('/', function () {
     return view('base');
 });
 
-Route::get('/', function () {
-    return view('base');
-});
+Route::get('/', [MainController::class, 'base'])->name('main.base');
 
-Route::get('/', function () {
-    return view('base');
-});
+Route::get('/menu', [MainController::class, 'menu'])->name('main.menu');
+
+Route::get('/reservation', [MainController::class, 'reservation'])->name('main.reservation');
+
+Route::get('/cours', [MainController::class, 'cours'])->name('main.cours');
+
+Route::get('/mentionlegales', [MainController::class, 'mentionlegales'])->name('main.mentionlegales');
